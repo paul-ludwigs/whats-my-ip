@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import PigeonMap from "./components/PigeonMap";
 import Location from "./components/Location";
+import LocationDetails from "./components/LocationDetails";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -24,6 +25,7 @@ function App() {
           {console.log(response)}
             <h1>My IP: {response.ip}</h1>
             <Location ipDetails={response} />
+            <LocationDetails />
           </>
         ) : (
           <h1>Loading...</h1>
