@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import PigeonMap from './components/PigeonMap';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
@@ -9,10 +10,10 @@ function App() {
 
 
   useEffect(()=>{
-    axios
+    /*axios
       .get(`https://geo.ipify.org/api/v2/country?apiKey=${API_KEY}`)
       .then((response) => setIP(response.data.ip))
-      .catch((err) => console.log(err))
+      .catch((err) => console.log(err))*/
     
   }, [])
 
@@ -20,6 +21,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         {ip ? <h1>What is my IP: {ip}</h1> : <h2>Loading...</h2>}
+      <PigeonMap />
       </header>
     </div>
   );
