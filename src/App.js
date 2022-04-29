@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}`)
+      .get(`https://geo.ipify.org/api/v2/country,city?apiKey=at_o7JWg2NAdS7awhmGEhiyYnVEPmjMy`)
       .then((response) => setResponse(response.data))
       .catch((err) => console.log(err));
   }, []);
@@ -19,14 +19,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {
-          response ? (
-            <>
-              <h1>My IP: {response.ip}</h1> 
-              <Location ipDetails={response} />
-            </>
-          ) : <h1>Loading...</h1>
-        }
+        {response.length != 0 ? (
+          <>
+          {console.log(response)}
+            <h1>My IP: {response.ip}</h1>
+            <Location ipDetails={response} />
+          </>
+        ) : (
+          <h1>Loading...</h1>
+        )}
       </header>
     </div>
   );
