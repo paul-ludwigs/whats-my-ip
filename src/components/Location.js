@@ -14,10 +14,10 @@ function Location({ ipDetails }) {
   }, []);
 
   return (
-    <>
+    <div className="location">
       <h2>Location: {ipDetails.location.city}</h2>
       {locationDetails.length != 0 && locationDetails ? <PigeonMap response={ipDetails}/> : null}
-    </>
+    </div>
   );
 }
 
