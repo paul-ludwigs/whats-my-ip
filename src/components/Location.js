@@ -14,6 +14,8 @@ function Location({ipDetails}) {
   }, []);
 
   return (
+    <>
+    <h2>Location: {ipDetails.location.city}</h2>
     <div className="location">
       {locationDetails ? 
       <>
@@ -23,6 +25,7 @@ function Location({ipDetails}) {
       </>
       : null}
     </div>
+    </>
   );
 }
 
