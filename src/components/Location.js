@@ -3,7 +3,7 @@ import PigeonMap from "./PigeonMap";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function Location() {
+function Location({ipDetails}) {
   const [locationDetails, setLocationDetails] = useState([]);
 
   useEffect(() => {
@@ -14,10 +14,15 @@ function Location() {
   }, []);
 
   return (
-    <>
-      {locationDetails ? console.log(locationDetails) : null}
-      <PigeonMap />
-    </>
+    <div className="location">
+      {locationDetails ? 
+      <>
+      {console.log(locationDetails)}
+      {console.log(ipDetails)}
+      <PigeonMap response={ipDetails}/>
+      </>
+      : null}
+    </div>
   );
 }
 

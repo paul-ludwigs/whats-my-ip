@@ -21,8 +21,11 @@ function App() {
       <header className="App-header">
         {
           response ? (
-            <PigeonMap response={response} />
-          ) : null /*response ? <h1>What is my IP: {response.data.ip}</h1> : <h2>Loading...</h2>*/
+            <>
+              <h1>My IP: {response.ip}</h1> 
+              <Location ipDetails={response} />
+            </>
+          ) : <h1>Loading...</h1>
         }
       </header>
     </div>
